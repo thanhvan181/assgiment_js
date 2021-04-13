@@ -10,6 +10,7 @@ const maleSex = document.getElementById('male-sex');
 const femaleSex = document.getElementById('female-sex');
 const ViLanguage = document.getElementById('vi-language');
 const EnLanguage = document.getElementById('en-language');
+const note = document.getElementById('text-note');
 const submit = document.getElementById('btn-submit');
 const bodyConten = document.getElementById('body-content');
 console.log("Run CheckBox js")
@@ -50,6 +51,14 @@ function getDataForm(){
 		data[website.name] = website.value;
 		data[email.name] = email.value;
 		data[phone.name] = phone.value;
+		data[maleSex.name] = maleSex.value;
+		data[femaleSex.name] = femaleSex.value;
+		let languages = {};
+			languages[ViLanguage.name] = ViLanguage.value;
+		    languages[EnLanguage.name] = EnLanguage.value;
+		data["languages"] = languages;
+
+		data[note.name] = note.value;
 	}
 	return data;
 }
