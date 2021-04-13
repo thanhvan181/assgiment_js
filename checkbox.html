@@ -5,25 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./checkbox.css">
-    <link rel="stylesheet" href="./checkbox.js">
+    <link rel="stylesheet" href="checkbox.css">
+
 </head>
 
 <body>
+    <div id="body-content">
     <div class="login">
         <h1>DANG KY</h1>
         <h2>Thông Tin Tài Khoản</h2>
         <form id="form" class="form">
             <div class="form-control">
-                <label for="username">Tên Tài Khoản *</label>
-                <input type="text" placeholder="vanthanh" id="username" />
+                <label>Tên Tài Khoản *</label>
+                <input type="text" name="username" class="error" placeholder="vanthanh" id="username" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
-                <label for="username">Mật Khẩu *</label>
-                <input type="password" placeholder="Password" id="password" />
+                <label>Mật Khẩu *</label>
+                <input type="password" name="password"  placeholder="Password" id="password" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -33,16 +34,12 @@
     </div>
 
     <div class="container">
-
-
-
-
         <div class="header">
             <h2>Thông Tin Ngừoi Dùng</h2>
 
             <div class="form-control">
                 <label for="username">Ho Tên *</label>
-                <input type="text" placeholder="" id="username" />
+                <input type="text" name="fullName" placeholder="" id="full-name" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -50,30 +47,30 @@
 
 
             <div class="form-control">
-                <label for="username">Email *</label>
-                <input type="email" placeholder="" id="email" />
+                <label>Email *</label>
+                <input type="email" name="email" placeholder="" id="email" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
 
             <div class="form-control">
-                <label for="dienthoai">Số Điện Thoại *</label>
-                <input type="text" placeholder="" id="sodienthoai" />
+                <label>Số Điện Thoại *</label>
+                <input type="text" name="phone" placeholder="" id="phone-number" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
-                <label for="username">Địa chỉ *</label>
-                <input type="text" placeholder="" id="diachi" />
+                <label>Địa chỉ *</label>
+                <input type="text" name="address" placeholder="" id="address" required />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
-                <label for="username"> Webiste *</label>
-                <input type="text" placeholder="" id="Webiste" />
+                <label> Webiste *</label>
+                <input type="text" name="website" placeholder="" id="website-input" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -85,69 +82,26 @@
             <h2>Thong tin bo sung</h2>
             <div class="gt">
                 Giới tính:
-                <input id="male" type="radio" name="female" value="Male">Nam
-                <input id="female" type="radio" name="female" value="FeMale">Nữ
+                <input id="male-sex" type="radio" name="female" value="Male">Nam
+                <input id="female-sex" type="radio" name="female" value="FeMale">Nữ
             </div>
             <div class="nn">
                 Ngon Ngu:
-                <input id="male" type="checkbox" name="nn1" value="Tiengviet" onclick="">Tieng Viet
-                <input id="female" type="checkbox" name="nn2" value="tienganh" onclick="">Tieng anh
+                <input id="vi-language" type="checkbox" name="nn1" value="Tiengviet">Tieng Viet</input>
+                <input id="en-language" type="checkbox" name="nn2" value="tienganh">Tieng anh</input>
             </div>
-            <input type="text" placeholder="Ghi chu" id="node">
+
+            <textarea rows="4" cols="50" name="comment" placeholder="Ghi chu" form="usrform">
+</textarea>
 
 
-        </div>
-        <div class="form">
-            <button>Submit</button>
-        </div>
-
-    </div>
-
-
-
-    SOCIAL PANEL HTML
-    <div class="social-panel-container">
-        <div class="social-panel">
-            <p>Created with <i class="fa fa-heart"></i> by
-                <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-            </p>
-            <button class="close-btn"><i class="fas fa-times"></i></button>
-            <h4>Get in touch on</h4>
-            <ul>
-                <li>
-                    <a href="https://www.patreon.com/florinpop17" target="_blank">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/florinpop1705" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://linkedin.com/in/florinpop17" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://facebook.com/florinpop17" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://instagram.com/florinpop17" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
-    <button class="floating-btn">
-        Get in Touch
-    </button>
-
-
-
+    <div class="form">
+        <button id="btn-submit">Submit</button>
+    </div>
+    </div>
+<script src="checkbox.js"></script>
 </body>
 
 </html>
