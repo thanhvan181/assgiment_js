@@ -1,0 +1,38 @@
+
+body {
+    margin:0;
+    padding: 0px;
+    margin: auto;
+    width: 980px;
+    
+}
+.banner img{
+    width: 980px;
+}
+
+.navagtion ul{
+    padding: 20px 0px;
+    background-color:grey;
+    height: 30%;
+    text-align: center;
+
+}
+
+.navagtion ul li {
+    display: inline-table;
+    padding: 0px 30px;
+    
+
+}
+.navagtion ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 30px 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+footer{
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+}
