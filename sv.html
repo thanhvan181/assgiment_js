@@ -9,34 +9,47 @@
 <body>
     <div class="container">
         <div class="header">
-            <h2>SV TRON HOC</h2>
+            <h2>SV Trốn học</h2>
         </div>
         <form id="form" class="form">
             <div class="form-control">
-                <label for="username">Ho Ten</label>
+                <label for="username">Họ tên:</label>
                 <input type="text" id="username" />
                 
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
-                <label for="username">Mon dang hoc</label>
+                <label for="username">Môn đang học:</label>
                 <input type="text" id="subject" />
                 
                 <small>Error message</small>
             </div>
             <div class="form-control">
-                <label for="username">So buoi vang</label>
+                <label for="username">Sô buổi vắng:</label>
                 <input type="text" id="absent"/>
                 
                 
                 <small>Error message</small>
             </div>
-            
-            <button>Submit</button>
+            <button type="submit" id="btn-submit" value="Submit">Thêm</button>
         </form>
+        <br>
+        <div>
+            <table id="absent-table">
+                <tr>
+                    <th>Tên</th>
+                    <th>Môn</th>
+                    <th>Đã nghỉ(số buổi)</th>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <div class="form-control">
+            <button id="checker">-- Check --</button>
+        </divc>
     </div>
-    
+
     
     
 </body>
