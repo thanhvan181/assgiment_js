@@ -22,27 +22,36 @@ email.addEventListener('blur', validateEmail);
 phone.addEventListener('blur', validatePhone);
 address.addEventListener('blur', validateAddress);
 website.addEventListener('blur', validateWebsite);
+maleSex.addEventListener('change', validateRadio);
+femaleSex.addEventListener('change', validateRadio);
+
+ViLanguage.addEventListener('change', validateCheck);
+EnLanguage.addEventListener('change', validateCheck);
+
+
 submit.addEventListener("click", showData)
 
-function showData(e){
+
+
+function showData(e) {
 	console.log(e)
 	console.log("Click Submit")
 	let data = getDataForm()
-	if (Object.keys(data).length > 1){
+	if (Object.keys(data).length > 1) {
 		bodyConten.innerHTML = ''
-        document.write(JSON.stringify(data))
+		document.write(JSON.stringify(data))
 	}
 
 }
 
-function getDataForm(){
+function getDataForm() {
 	let data = {};
-  // console.log(JSON.stringify());
-	let validators = [validateUsername, validatePassword, validateAddress, validateFullName, validateEmail, validatePhone, validateWebsite];
-	let result = validators.every(function (validator){
+	// console.log(JSON.stringify());
+	let validators = [validateUsername, validatePassword, validateAddress, validateFullName, validateEmail, validatePhone, validateWebsite, validateRadio, validateCheck];
+	let result = validators.every(function (validator) {
 		return validator()
 	})
-    console.log("Check All ", result)
+	console.log("Check All ", result)
 	if (result) {
 		data[username.name] = username.value;
 		data[password.name] = password.value;
@@ -54,8 +63,8 @@ function getDataForm(){
 		data[maleSex.name] = maleSex.value;
 		data[femaleSex.name] = femaleSex.value;
 		let languages = {};
-			languages[ViLanguage.name] = ViLanguage.value;
-		    languages[EnLanguage.name] = EnLanguage.value;
+		languages[ViLanguage.name] = ViLanguage.value;
+		languages[EnLanguage.name] = EnLanguage.value;
 		data["languages"] = languages;
 
 		data[note.name] = note.value;
@@ -63,32 +72,32 @@ function getDataForm(){
 	return data;
 }
 
-function validateUsername(){
-    const re = /^[a-z0-9_-]{3,16}$/igm;
-    if (!re.test(username.value)){
+function validateUsername() {
+	const re = /^[a-z0-9_-]{3,16}$/igm;
+	if (!re.test(username.value)) {
 		setErrorFor(username, "username invalid !")
 		return false
-    } else {
-        setSuccessFor(username)
-        return true
+	} else {
+		setSuccessFor(username)
+		return true
 
-    }
+	}
 }
 
-function validatePassword(e){
+function validatePassword(e) {
 	const re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/igm;
-	if (!re.test(password.value)){
+	if (!re.test(password.value)) {
 		setErrorFor(password, "Password Invalid ! Minimum eight characters, at least one letter, one number and one special character")
-        return false
+		return false
 	} else {
 		setSuccessFor(password)
 		return true
 	}
 
 }
-function validateFullName(e){
+function validateFullName(e) {
 	const re = /^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$/igm;
-	if (!re.test(fullName.value)){
+	if (!re.test(fullName.value)) {
 		setErrorFor(fullName, "Full name invalid !")
 		return false
 	} else {
@@ -96,9 +105,9 @@ function validateFullName(e){
 		return true
 	}
 }
-function validatePhone(e){
+function validatePhone(e) {
 	const re = /(84|0[3|5|7|8|9])+([0-9]{8})\b/igm;
-	if (!re.test(phone.value)){
+	if (!re.test(phone.value)) {
 		setErrorFor(phone, "Phone invalid !")
 		return false
 	} else {
@@ -107,19 +116,19 @@ function validatePhone(e){
 	}
 
 }
-function validateEmail(e){
+function validateEmail(e) {
 	const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/igm;
-	if (!re.test(email.value)){
+	if (!re.test(email.value)) {
 		setErrorFor(email, "Email invalid !")
 		return false
 	} else {
 		setSuccessFor(email)
-        return true
+		return true
 	}
 }
-function validateAddress(e){
+function validateAddress(e) {
 	const re = /^.{6,}$/igm;
-	if (!re.test(address.value)){
+	if (!re.test(address.value)) {
 		setErrorFor(address, "Address invalid !")
 		return false
 	} else {
@@ -128,9 +137,9 @@ function validateAddress(e){
 	}
 
 }
-function validateWebsite(e){
+function validateWebsite(e) {
 	const re = /^.+\..+$/igm;
-	if (!re.test(website.value)){
+	if (!re.test(website.value)) {
 		setErrorFor(website, "Website invalid !")
 		return false
 	} else {
@@ -138,6 +147,63 @@ function validateWebsite(e){
 		return true
 	}
 }
+function validateRadio() {
+	if (!maleSex.checked && !femaleSex.checked) {
+		setErroForRadio();
+		return false;
+
+	} else {
+
+		// setSuccessForRadio();
+		const form = document.getElementById("sexs");
+		form.style.display = 'none';
+		return true;
+	}
+}
+
+function validateCheck() {
+	if (!ViLanguage.checked && !EnLanguage.checked) {
+		setErroForCheck();
+		return false;
+
+	} else {
+
+		// setSuccessForCheck();
+		const form = document.getElementById("sexs");
+		form.style.display = 'none';
+
+		return true;
+	}
+}
+
+
+
+
+function setErroForRadio() {
+	const form = document.getElementById("sexs");
+	form.style.display = 'block';
+
+
+
+
+}
+// function setSuccessForRadio() {
+// 	const form = document.getElementById("sexs");
+// 	form.style.display = 'none';
+
+// }
+
+function setErroForCheck() {
+	const form = document.getElementById("language");
+	form.style.display = 'block';
+
+}
+
+function setSuccessForCheck() {
+	const form = document.getElementById("language");
+	form.style.display = 'none';
+}
+
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');

@@ -95,13 +95,21 @@
             <h2>Thong tin bo sung</h2>
             <div class="gt">
                 Giới tính:
-                <input id="male-sex" type="radio" name="sex" value="Male">Nam
-                <input id="female-sex" type="radio" name="sex" value="FeMale">Nữ
+                <input id="male-sex" type="radio" name="sex" value="Male"  >Nam
+                <input id="female-sex" type="radio" name="sex" value="FeMale" >Nữ
+                <div id="sexs" style="display:none; color: red">
+                    <p>ban chua chon gioi tinh</p>
+                </div>
+                
             </div>
             <div class="nn">
                 Ngon Ngu:
-                <input id="vi-language" type="checkbox" name="nn1" value="Tiengviet">Tieng Viet</input>
+                <input id="vi-language" type="checkbox" name="nn1" value="Tiengviet" checked>Tieng Viet</input>
                 <input id="en-language" type="checkbox" name="nn2" value="tienganh">Tieng anh</input>
+                <div id="language" style="display:none; color: red">
+                    <p>ban chua chon ngon ngu </p>
+                </div>
+                
             </div>
 
             <textarea id="text-note" name="note" rows="4" cols="50" name="comment" placeholder="Ghi chu" form="usrform">
